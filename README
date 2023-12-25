@@ -1,0 +1,29 @@
+Motivation
+----------
+
+The Logitech K400 keyboard under Linux presents as a single
+device that combines both its trackpad and keyboard events.
+This can be a problem when using "kmonad" keyboard manager,
+as it will completely filter all trackpad events, rendering
+that part of the device inoperative.
+
+This small program, attaches to the Logitech device, and
+creates two new devices "Split Keyboard", and "Split Mouse"
+that receive the respective events from the Logitech device.
+
+Kmonad can then be configured to use the "Split Keyboard"
+device, leaving the "Split Mouse" device available for
+normal trackpad usage.
+
+
+Disclaimer
+----------
+
+This program was hacked together without a deep understanding
+of the underlying technology.  It is surely deficient in multiple
+ways.  Patches welcome.
+
+Likely the actual proper fix is for the original Logitech
+device to not combine these events in the first place.
+
+
