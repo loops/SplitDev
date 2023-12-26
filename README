@@ -63,3 +63,10 @@ After manually testing splitdev and your updated kmonad
 configuration, update your window manager to automatically
 run "splitdev" and "kmonad", whenver you log in.
 
+
+Debugging
+---------
+
+Make use of "evtest" and "udevadm monitor" utilities to
+watch for creation of devices when you run "splitdev".
+
