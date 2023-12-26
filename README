@@ -26,4 +26,40 @@ ways.  Patches welcome.
 Likely the actual proper fix is for the original Logitech
 device to not combine these events in the first place.
 
+Compiling
+---------
+
+You'll need libevdev development files, and pkgconf to
+find them. So, for example on Fedora:
+
+   $ dnf install libevdev-devel pkgconf evtest
+   $ make
+
+
+Install
+-------
+
+In order to make the created devices more redily available
+to use in the kmonad configuration, set up udev to create
+symbolic links with fixed names:
+
+    $ sudo cp 83-splitdev.rules /etc/udev/rules.d/
+	$ sudo udevadm control --reload
+
+Manually run splitdev to test things out:
+
+    $ ./splitdev
+
+You should be able to see two new device symlinks created:
+
+    $ ls -l /dev/input/by-id/Split*
+
+Your kmonad configuration file will be able to use the
+split keyboard device, as its input:
+
+  input  (device-file "/dev/input/by-id/Split_Keyboard")
+
+After manually testing splitdev and your updated kmonad
+configuration, update your window manager to automatically
+run "splitdev" and "kmonad", whenver you log in.
 

@@ -1,0 +1,3 @@
+SUBSYSTEMS=="input", ATTRS{id/vendor}=="1235", ATTRS{id/product}=="9876", ATTR{authorized}="0", ENV{READY}="value", SYMLINK+="input/by-id/Split_Keyboard"
+SUBSYSTEMS=="input", ATTRS{id/vendor}=="1235", ATTRS{id/product}=="6789", ATTR{authorized}="0", ENV{READY}="value", SYMLINK+="input/by-id/Split_Mouse"
+
