@@ -23,7 +23,7 @@ This program was hacked together without a deep understanding
 of the underlying technology.  It is surely deficient in multiple
 ways.  Patches welcome.
 
-Likely the actual proper fix is for the original Logitech
+Likely, the actual proper fix is for the original Logitech
 device to not combine these events in the first place.
 
 Compiling
@@ -44,7 +44,7 @@ to use in the kmonad configuration, set up udev to create
 symbolic links with fixed names:
 
     $ sudo cp 83-splitdev.rules /etc/udev/rules.d/
-	$ sudo udevadm control --reload
+    $ sudo udevadm control --reload
 
 Manually run splitdev to test things out:
 
