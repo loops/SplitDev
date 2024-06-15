@@ -3,6 +3,7 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <libevdev/libevdev-uinput.h>
+#include <unistd.h>
 
 void fatal(const char *msg)
 {
@@ -103,6 +104,7 @@ int main(int argc, char *argv[])
 			if (ev.code == BTN_LEFT || ev.code == BTN_RIGHT || ev.code == BTN_MIDDLE) {
 				libevdev_uinput_write_event(mouse, ev.type, ev.code, ev.value);
 				libevdev_uinput_write_event(mouse, 0,0,0);
+				if (ev.value == 0) usleep(100000);
 			} else {
 				libevdev_uinput_write_event(keyboard, ev.type, ev.code, ev.value);
 				libevdev_uinput_write_event(keyboard, 0,0,0);
